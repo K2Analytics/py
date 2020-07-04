@@ -53,7 +53,7 @@ def iv(df, target,bins = 10,fill_na = True,rm_cols =[]):
     
     iv_df = pd.DataFrame()
     for i in col_names:
-        if(df[i].dtype.kind in 'biufc'):
+        if(df[var].dtype.kind in 'biufc'):
             df['decile']=pd.qcut(df[i].rank(method='first'), bins, labels=False) ### Rank 
             if (fill_na== True):
                 df['decile'] = df['decile'].fillna(value="Missing")
